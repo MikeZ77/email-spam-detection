@@ -1,0 +1,49 @@
+MultinomialNB
+https://github.com/ShubhamPy/Spam-Classifier/blob/master/spamClassifier/ClassifierModel.ipynb
+
+Has good analysis of methods: we should aim for something like this.
+https://github.com/chongjason914/spam-classification/blob/main/spam-classification-nlp.ipynb
+
+Also good analysis:
+https://github.com/Govind155/Spam-Classification-using-NLP/blob/main/Spam%20Classifier.ipynb
+
+Enron dataset analysis:
+https://github.com/sjqtentacles/Spam-Classification-Enron-Dataset/blob/master/main.ipynb
+
+Enron and contains ROC curves:
+https://github.com/tong-jin-nyu/filtering-Enron-spam-emails-using-supervised-learning
+
+Pre-processed TREC 2007 Data:
+https://www.kaggle.com/imdeepmind/preprocessed-trec-2007-public-corpus-dataset
+
+Enron dataset:
+https://www.kaggle.com/wcukierski/enron-email-dataset
+Processing on the same dataset:
+https://www.kaggle.com/oalvay/enron-emails-complete-preprocessing
+
+
+
+
+
+
+
+
+
+Labeled spam and ham:
+https://github.com/MWiechmann/enron_spam_data
+http://www2.aueb.gr/users/ion/data/enron-spam/
+
+
+https://github.com/Govind155/Spam-Classification-using-NLP
+https://archive-beta.ics.uci.edu/ml/datasets/spambase
+https://datascience.stackexchange.com/questions/14983/classified-enron-email-dataset
+https://new.pythonforengineers.com/blog/build-a-spam-filter/
+
+
+https://towardsdatascience.com/how-i-used-machine-learning-to-classify-emails-and-turn-them-into-insights-efed37c1e66
+https://towardsdatascience.com/how-i-used-machine-learning-to-classify-emails-and-turn-them-into-insights-part-2-6a8f26477c86
+https://github.com/anthdm/ml-email-clustering
+
+
+
+
