@@ -1,0 +1,8 @@
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# virtualenv
+venv/
+
+# TREC2007 raw dataset
+trec07p/

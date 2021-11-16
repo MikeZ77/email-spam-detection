@@ -22,13 +22,6 @@ Processing on the same dataset:
 https://www.kaggle.com/oalvay/enron-emails-complete-preprocessing
 
 
-
-
-
-
-
-
-
 Labeled spam and ham:
 https://github.com/MWiechmann/enron_spam_data
 http://www2.aueb.gr/users/ion/data/enron-spam/

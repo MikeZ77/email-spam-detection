@@ -8,14 +8,7 @@ scikit-learn
 matplotlib
 seaborn
 nltk
-statistics
 statsmodels
-lightgbm
-xgboost
-yellowbrick
 tqdm
-torch
-tensorflow
-gensim
-spacy
-pyLDAvis
+langdetect
+
