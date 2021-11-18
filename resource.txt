@@ -21,6 +21,10 @@ https://www.kaggle.com/wcukierski/enron-email-dataset
 Processing on the same dataset:
 https://www.kaggle.com/oalvay/enron-emails-complete-preprocessing
 
+Spam detection using N-gram 
+https://dspace.library.uvic.ca/bitstream/handle/1828/11375/Kaur_Simran_MEng_2019.pdf?sequence=1&isAllowed=y
+
+
 
 Labeled spam and ham:
 https://github.com/MWiechmann/enron_spam_data
@@ -36,6 +40,16 @@ https://new.pythonforengineers.com/blog/build-a-spam-filter/
 https://towardsdatascience.com/how-i-used-machine-learning-to-classify-emails-and-turn-them-into-insights-efed37c1e66
 https://towardsdatascience.com/how-i-used-machine-learning-to-classify-emails-and-turn-them-into-insights-part-2-6a8f26477c86
 https://github.com/anthdm/ml-email-clustering
+
+
+spam attack
+https://github.com/sihanh/Spamfilter1.0
+https://github.com/michaelpdnl/Applying-adversarial-learning-to-invade-a-spam-filter
+
+
+
+
+
 
 
 
