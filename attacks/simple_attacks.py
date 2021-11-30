@@ -8,28 +8,32 @@ from sklearn.model_selection import train_test_split
 class SimpleAttack():
   def __init__(self):
 
-    enron_emails = pd.read_csv('data/enron_cleaned.csv')
-    enron_emails = enron_emails.fillna('')
-    enron_ham = enron_emails[enron_emails['target'] == 0]
-    enron_spam = enron_emails[enron_emails['target'] == 1]
+    # enron_emails = pd.read_csv('data/enron_cleaned.csv')
+    # enron_emails = enron_emails.fillna('')
+    # enron_ham = enron_emails[enron_emails['target'] == 0]
+    # enron_spam = enron_emails[enron_emails['target'] == 1]
     
-    enron_ham = enron_ham['clean_msg_no_lst'].tolist()
-    enron_ham = str(enron_ham).replace("'",'')
-    enron_ham = str(enron_ham).replace(",",'')
+    # enron_ham = enron_ham['clean_msg_no_lst'].tolist()
+    # enron_ham = str(enron_ham).replace("'",'')
+    # enron_ham = str(enron_ham).replace(",",'')
     
-    tokens = nltk.word_tokenize(enron_ham)
-    bigram_fd_ham = nltk.FreqDist(nltk.bigrams(tokens))
+    # tokens = nltk.word_tokenize(enron_ham)
+    # bigram_fd_ham = nltk.FreqDist(nltk.bigrams(tokens))
 
-    enron_spam = enron_spam['clean_msg_no_lst'].tolist()
-    enron_spam = str(enron_spam).replace("'",'')
-    enron_spam = str(enron_spam).replace(",",'')
+    # enron_spam = enron_spam['clean_msg_no_lst'].tolist()
+    # enron_spam = str(enron_spam).replace("'",'')
+    # enron_spam = str(enron_spam).replace(",",'')
 
-    tokens = nltk.word_tokenize(enron_spam)
-    bigram_fd_spam = nltk.FreqDist(nltk.bigrams(tokens))
+    # tokens = nltk.word_tokenize(enron_spam)
+    # bigram_fd_spam = nltk.FreqDist(nltk.bigrams(tokens))
 
-    self.enron_emails = enron_emails[['clean_msg_no_lst','target']]
-    self.most_common_ham = list(bigram_fd_ham.most_common(100))
-    self.most_common_spam = list(bigram_fd_spam.most_common(100))
+    # self.enron_emails = enron_emails[['clean_msg_no_lst','target']]
+    # self.most_common_ham = list(bigram_fd_ham.most_common(100))
+    # self.most_common_spam = list(bigram_fd_spam.most_common(100))
+
+    trec_emails = pd.read_csv('data/trec_cleaned.csv')[['class', 'clean_msg_no_lst']]
+    trec_spam = trec_emails[trec_emails['class'] == 'spam']
+    self.trec_spam = trec_spam['clean_msg_no_lst']
 
     
   def dictionary_attack_pure_ham(self, malicious_content, length=50, number_of_spam=100):
@@ -96,8 +100,25 @@ class SimpleAttack():
     X_test = X_test.apply(lambda email: self.tokenize(email, percent_tokenize, spam_words), axis=1)
     return X_test
 
+  def insert_focus_token(self, email, token):
+    email = '{} {}'.format(token, str(email['clean_msg_no_lst']))
+    return email
+
+  def focused_attack(self, token, num_spam=1000):
+    print(len(self.trec_spam))
+    choices = random.choices(np.arange(0, len(self.trec_spam)-1), k=num_spam)
+    spam = self.trec_spam.iloc[choices].to_frame()
+
+    result = spam.apply(lambda email: self.insert_focus_token(email, token), axis=1).tolist()
+    targets = np.ones(len(result)-1, dtype=int).tolist()
+    focused_df = attack_df = pd.DataFrame(zip(result, targets), columns=['clean_msg_no_lst', 'target'])
+    return focused_df
+
 attack = SimpleAttack()
-X_test = attack.tokenize_spam()
+df = attack.focused_attack('vince kaminski')
+print(df.head())
+print(len(df))
+# X_test = attack.tokenize_spam()
 
 # print(X_test.head())
 
