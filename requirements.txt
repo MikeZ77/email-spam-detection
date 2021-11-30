@@ -11,4 +11,5 @@ nltk
 statsmodels
 tqdm
 langdetect
+textattack
 

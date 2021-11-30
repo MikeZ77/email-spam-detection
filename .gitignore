@@ -6,3 +6,5 @@ venv/
 
 # TREC2007 raw dataset
 trec07p/
+
+__pycache__
