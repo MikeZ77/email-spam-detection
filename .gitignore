@@ -8,3 +8,7 @@ venv/
 trec07p/
 
 __pycache__
+
+# Ignore datasets that are too large
+attacks/data/enron_cleaned.csv
+attacks/data/trec_cleaned.csv
